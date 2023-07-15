@@ -1,0 +1,46 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Noto+Serif|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat|Noto+Serif|Roboto&display=swap');
+* {
+//   font-family: 'Roboto', sans-serif;
+//   font-family: 'Noto Serif', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+
+}
+.text-center{
+    text-align: center;
+}
+.justify-center{
+    justify-content: center;
+}
+
+.primary-title{
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; } 
+}
+
+.animation-fadeIn {
+    // animation: fadeIn 4s alternate;
+}
+
+
+.ion-slides{
+    background-color: rgba(255, 255, 255, .1)
+}

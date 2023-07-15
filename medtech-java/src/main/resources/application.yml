@@ -1,0 +1,31 @@
+jwt:
+  secret: fe9006e6d44146514057ec65a6aa7e5b285e3a19a40676a18b8d1ae076dd1b0c2fce2a1dd70a2b5d14375adc5817ea19a5524b372b2ab45d75e21c622d8e7f48
+  error:
+    whitelabel:
+      enabled: false
+spring:
+  jpa:
+    open-in-view: false
+  mail:
+    host: smtp.gmail.com
+    password: nifophbmagytbthz
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            fallback: true
+            port: 587
+          ssl:
+            enable: false
+          starttls:
+            enable: true
+            required: true
+    username: medtech.tecnologianaoresponder@gmail.com
+
+server:
+  port: ${PORT:8080}
+
+application:
+  front-url: http://med-tech.herokuapp.com/#/

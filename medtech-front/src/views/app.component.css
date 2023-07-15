@@ -1,0 +1,25 @@
+.was-validated {
+  border: none;
+
+
+}
+
+.ng-invalid input {
+  border: 1px solid #DDDDDD;
+}
+
+.ng-valid input {
+  border: 1px solid #DDDDDD;
+}
+
+.form-control:invalid {
+  border: 1px solid #DDDDDD;
+}
+
+.form-control:valid {
+  border: 1px solid #DDDDDD;
+}
+
+.form-control  {
+  background-image: none !important;
+}

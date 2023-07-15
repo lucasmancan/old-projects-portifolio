@@ -1,0 +1,62 @@
+<ion-content padding >
+   
+      <div margin padding-horizontal text-center>
+          <img margin src="../../../assets/images/logo_zyon.png">
+      </div>
+
+  <form [formGroup]="onLoginForm" class="list-form" padding >
+          <ion-item lines="none" >
+        
+            <!-- <img style="width: 24px; height: 24px; margin-right: 15px;" src="../../../assets/images/email.png"> -->
+          
+            <ion-input  placeholder="E-mail" type="email" formControlName="username"></ion-input>
+          </ion-item>
+          <!-- <p ion-text style="color: #763626" class="text08" *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">
+            <ion-text style="color:#763626; padding-left: 16px">
+              Campo necessário
+            </ion-text>
+          </p> -->
+    
+          <ion-item lines="none" >
+            
+              <!-- <img  src="../../../assets/images/lock.png"> -->
+            
+            <ion-input  placeholder="Senha" type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <!-- <p ion-text style="color: #763626" class="text08" *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">
+            <ion-text style="color:#763626; padding-left: 16px">
+              Campo necessário
+            </ion-text>
+            </p> -->
+        </form>
+    <ion-grid>
+      <div padding>
+        <div margin>
+          <ion-button   expand="block" (click)="login()" [disabled]="!onLoginForm.valid" tappable>Entrar</ion-button>
+        </div>
+        <div margin>
+        <ion-button  size="small" fill="clear" expand="block" routerLink="/register">Não tem uma conta?</ion-button>
+        </div>
+      </div>
+      <ion-grid class="btn-group">
+          <ion-row>
+            <ion-col size="4">
+              <ion-button  fill="clear" expand="full">
+                <ion-icon  slot="icon-only" name="logo-facebook"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button  fill="clear" expand="full">
+                <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button  fill="clear" expand="full">
+                <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+    </ion-grid>
+</ion-content>

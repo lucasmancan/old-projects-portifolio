@@ -1,0 +1,19 @@
+application:
+  front-url: http://localhost:4200/#/
+spring:
+  profiles: dev
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:testdb
+    username: sa
+    data: classpath:init.sql
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+

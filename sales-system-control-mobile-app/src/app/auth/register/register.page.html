@@ -1,0 +1,81 @@
+<ion-content padding class="login auth-page" >
+
+  <div margin padding-horizontal text-center>
+    <img margin  src="../../../assets/images/logo_zyon.png">
+</div>
+
+  
+      <!-- Register form -->
+      <form [formGroup]="onRegisterForm" class="list-form" padding>
+        <ion-item  lines="none" >
+          <!-- <img  src="../../../assets/images/shop.png"> -->
+          <ion-input  placeholder="Loja"  type="text" formControlName="fullName"></ion-input>
+        </ion-item>
+        <!-- <p ion-text class="text08" *ngIf="onRegisterForm.get('fullName').touched && onRegisterForm.get('fullName').hasError('required')">
+          <ion-text color="danger">
+            Esse campo é necessário
+          </ion-text>
+        </p> -->
+  
+        <ion-item  class="animated fadeInUp" lines="none">
+         
+          <!-- <img  src="../../../assets/images/email.png"> -->
+          <ion-input   placeholder="E-mail" type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <!-- <p ion-text class="text08" *ngIf="onRegisterForm.get('email').touched && onRegisterForm.get('email').hasError('required')">
+          <ion-text color="danger">
+            Esse campo é necessário
+          </ion-text>
+        </p> -->
+  
+        <ion-item class="animated fadeInUp" lines="none" >
+          <!-- <img  src="../../../assets/images/lock.png"> -->
+          <ion-input  placeholder="Senha" type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <!-- <p ion-text color="danger" class="text08" *ngIf="onRegisterForm.get('password').touched && onRegisterForm.get('password').hasError('required')">
+          <ion-text color="danger">
+              Esse campo é necessário
+          </ion-text>
+        </p> -->
+      </form>
+  
+      <div margin-top >
+        <ion-button  margin icon-left size="medium" expand="block"  (click)="signUp()" [disabled]="!onRegisterForm.valid"
+          tappable>
+          Criar Conta
+        </ion-button>
+  
+        <ion-grid class="btn-group" margin-top>
+          <ion-row>
+            <ion-col size="4">
+              <ion-button  expand="full" fill="clear"  >
+                <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button  expand="full" fill="clear"  >
+                <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button  expand="full" fill="clear"  >
+                <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+      </div>
+  
+      <!-- Other links -->
+      <div text-center margin-top>
+        <span  tappable>
+          <!-- <ion-text >
+            Já tenho uma conta! <span color="primary">Entrar</span>
+          </ion-text> -->
+          <ion-button  size="small" fill="clear" expand="block" routerLink="/login">Já tenho conta!</ion-button>
+        </span>
+      </div>
+  
+  </ion-content>
+  

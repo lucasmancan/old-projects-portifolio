@@ -1,0 +1,118 @@
+<ion-header >
+  <ion-toolbar >
+    <ion-title >
+      Perfil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile" >
+  <ion-card no-margin >
+    <ion-card-content class="bg-profile" class="text-center justify-center" >
+      <ion-avatar class="text-center">
+        <img 
+          src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <h1 class="fw500">Lucas F.</h1>
+      <h2 color="light" margin-bottom>Marmitaria do Zé</h2>
+      <ion-button icon-left mode ="ios" fill="clear" >
+        <ion-icon name="photos"></ion-icon>
+        Editar / Adicionar Foto
+      </ion-button>
+    </ion-card-content>
+
+    <ion-grid fixed no-padding>
+      <ion-row>
+        <ion-col size="12" padding>
+
+          <ion-list margin-bottom mode="ios"
+            >
+            <ion-list-header  mode="ios">
+              <ion-label class="fw700" >Editar Cadastro</ion-label>
+            </ion-list-header>
+
+            <ion-item mode="ios">
+              <ion-label  position="stacked">Loja:</ion-label>
+              <ion-input  inputmode="text" placeholder="Ex..: Dogão do Zé" value="Marmitaria do Zé">
+              </ion-input>
+            </ion-item>
+
+            <ion-item  mode="ios">
+              <ion-label  position="stacked">CPF/CNPJ:</ion-label>
+              <ion-input  inputmode="text" placeholder="Ex..: 152.471.541-88 ou 83.681.526/0001-01"
+                value="08.911.783/0001-77"></ion-input>
+            </ion-item>
+
+            <ion-item  mode="ios">
+              <ion-label  position="stacked">Representante:</ion-label>
+              <ion-input  inputmode="text" placeholder="Ex..: Roberto da Silva" value="Lucas F.">
+              </ion-input>
+            </ion-item>
+
+            <ion-item  mode="ios">
+              <ion-label  position="stacked">E-mail:</ion-label>
+              <ion-input  inputmode="email" placeholder="Ex.: roberto.silva@dogaodoze.com.br"
+                value="lucasf@marmitariadoze.com.br"></ion-input>
+            </ion-item>
+
+            <ion-row no-padding>
+              <ion-col size="8" no-padding>
+                <ion-item  mode="ios">
+                  <ion-label  position="stacked">Endereço:</ion-label>
+                  <ion-input  inputmode="text" placeholder="Ex.: Av. Andrômeda"></ion-input>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="4" no-padding>
+                <ion-item  mode="ios">
+                  <ion-label  position="stacked">Nº:</ion-label>
+                  <ion-input  inputmode="text" placeholder="Ex.: 2000"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col size="6" no-padding>
+                <ion-item  mode="ios">
+                  <ion-label >Estado</ion-label>
+                  <ion-select >
+                    <ion-select-option value="SP">SP</ion-select-option>
+                    <ion-select-option value="RJ">RJ</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" no-padding>
+                <ion-item  mode="ios">
+                  <ion-label >Cidade</ion-label>
+                  <ion-select >
+                    <ion-select-option  value="Barueri">Barueri</ion-select-option>
+                    <ion-select-option  value="Osasco">Osasco</ion-select-option>
+                    <ion-select-option  value="São Paulo">São Paulo</ion-select-option>
+                    <ion-select-option  value="Rio de Janeiro">Rio de Janeiro</ion-select-option>
+                    <ion-select-option  value="Niterói">Niterói</ion-select-option>
+                    <ion-select-option  value="Cabo Frio">Cabo Frio</ion-select-option>
+                    <ion-select-option  value="Santana de Parnaíba">Santana de Parnaíba</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-item  mode="ios">
+              <ion-label  position="stacked">Complemento:</ion-label>
+              <ion-input  inputmode="text" placeholder="Ex.: Loja 2"></ion-input>
+            </ion-item>
+
+            <ion-button mode="ios"  expand="full" no-margin>Salvar Alterações
+            </ion-button>
+          </ion-list>
+
+        
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card>
+  
+</ion-content>

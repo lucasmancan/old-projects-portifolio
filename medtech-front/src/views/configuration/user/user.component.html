@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Seu perfil</h5>
+      </div>
+      <div class="card-body">
+        <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate class="was-validated">
+
+
+          <div class="row">
+            <div class="col-md-8 ">
+              <div class="form-group">
+                <label for="nomeUser">Nome * </label>
+                <input [(ngModel)]="user.name" class="form-control" #name="ngModel" required name="nomeUser" id="nomeUser" placeholder="Nome Completo"
+                       type="text">
+
+                <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+                  Digite seu nome completo.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 ">
+              <div class="form-group">
+                <label for="document">CRM * </label>
+                <input [(ngModel)]="user.document" class="form-control" #crm="ngModel" name="document" id="document" placeholder="1234" maxlength="15"
+                       type="text">
+
+                <div *ngIf="f.submitted && crm.invalid" class="invalid-feedback">
+                  Digite sua identificação.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 ">
+              <div class="form-group">
+                <label for="telefoneUser">Telefone *</label>
+                <input [(ngModel)]="user.phone" mask="(00) 0 0000-0000" minlength="11" required  #telefone="ngModel" class="form-control"  name="telefoneUser"  id="telefoneUser" placeholder="(00) 0 0000-0000"
+                       type="text">
+            
+                <div *ngIf="(telefone.invalid || telefone.errors?.length > 0 || telefone.errors?.minlength)" class="invalid-feedback">
+                  Digite um telefone válido.
+                </div>
+
+              </div>
+            </div>
+            <div class="col-md-8 ">
+              <div class="form-group">
+                <label for="userEmail">E-mail *</label>
+                <input [(ngModel)]="user.email" class="form-control" #email="ngModel" required name="userEmail" id="userEmail" placeholder="Email"
+                       type="email">
+
+                <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                  Digite um e-mail válido.
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button class="btn btn-primary btn-round" type="submit">Salvar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

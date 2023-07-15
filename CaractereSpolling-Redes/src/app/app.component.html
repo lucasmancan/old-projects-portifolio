@@ -1,0 +1,38 @@
+<div class="conteudo">
+  <!--The content below is only a placeholder and can be replaced.-->
+  <div class="main-div">
+    <div class="title">
+      <h1>
+        Redes de Computadores
+      </h1>
+
+      <h2>
+        Gerador binário Caractere Spolling!
+      </h2>
+
+      <h4>Digite o número de 16 bits em binário</h4>
+
+      <input class="input" matInput maxlength="16" [(ngModel)]="numero" (keyup)="apagarCampo($event)" name="numero"
+        placeholder="digite o número em binário">
+
+    </div>
+  </div>
+
+  <div class="numero-div">
+    {{"01111110"+numeroFinal+"01111110"}}
+  </div>
+
+  <div class="erro" *ngIf="erro" style="color:red; font-size:11px; text-align:center;  font-weight: bolder;">
+    Digite somente 16 digitos binários 0 ou 1.
+  </div>
+
+
+  <div class="main-div">
+    <h3>
+      Prof. Dr. Flávio Barrela.
+    </h3>
+    <h3>
+      &copy; 2018 Lucas Frederico Mançan - RA: 209609.
+    </h3>
+  </div>
+</div>

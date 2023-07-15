@@ -1,0 +1,14 @@
+<nav aria-label="" *ngIf="paginator && !paginator?.empty">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" [ngClass]="{'disabled': paginator?.number == 0 }">
+      <a class="page-link" (click)="paginate(paginator.number - 1)">Anterior</a>
+    </li>
+    <li class="page-item bg-primary border-color-primary" *ngFor="let item of counter(paginator?.totalPages);let i = index"
+        [ngClass]="{'active': i === paginator?.number}">
+      <a class="page-link bg-primary border-color-primary" (click)="paginate(i)">{{i + 1}}</a>
+    </li>
+    <li class="page-item" [ngClass]="{'disabled': paginator?.totalPages === paginator?.number + 1}">
+      <a class="page-link" (click)="paginate(paginator.number + 1)">Próximo</a>
+    </li>
+  </ul>
+</nav>

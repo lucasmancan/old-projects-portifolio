@@ -1,0 +1,7 @@
+{
+  "name": "Zyon",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

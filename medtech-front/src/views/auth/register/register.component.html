@@ -1,0 +1,78 @@
+<div class="container">
+  <br>
+  <hr>
+
+
+  <div class="row justify-content-center position-relative">
+    <div class="col-md-6">
+      <div class="card">
+        <header class="card-header">
+          <h4 class="card-title mt-2">Nova Conta</h4>
+        </header>
+        <article class="card-body">
+          <form name="form" (ngSubmit)="f.form.valid && signup()" #f="ngForm" novalidate class="was-validated">
+            <div class="form-row">
+              <div class="col form-group">
+                <label>Nome Completo * </label>
+                <input type="text" name="name" #nome="ngModel" class="form-control" placeholder="" required [(ngModel)]="signupform.name" maxlength="150">
+                <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
+                  Digite seu nome completo.
+                </div>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Endereço de E-mail *</label>
+              <input type="email" #email="ngModel"  name="email" class="form-control" placeholder="" required [(ngModel)]="signupform.email" maxlength="60">
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                Digite um e-mail válido.
+              </div>
+            </div>
+            <div class="form-group">
+              <label>CRM </label>
+              <input name="crm" #crm="ngModel" autocomplete="off" class="form-control"  maxlength="15"  placeholder=""  [(ngModel)]="signupform.document">
+              <div *ngIf="(crm.invalid || crm.errors?.length > 0 || crm.errors?.minlength)" class="invalid-feedback">
+                Digite uma identificação válida.
+              </div>
+          
+            </div>
+            <div class="form-group">
+              <label>Telefone para contato </label>
+              <input name="phone" #telefone="ngModel" autocomplete="off" class="form-control" mask="(00) 0 0000-0000" minlength="11" required placeholder=""  [(ngModel)]="signupform.phone">
+              <div *ngIf="(telefone.invalid || telefone.errors?.length > 0 || telefone.errors?.minlength)" class="invalid-feedback">
+                Digite um telefone válido.
+              </div>
+          
+            </div>
+
+            <div class="form-group">
+              <label>Senha *</label>
+              <input class="form-control" #senha="ngModel" type="password" name="password" required [(ngModel)]="signupform.password" minlength="6" maxlength="120">
+              <div *ngIf="f.submitted && senha.invalid" class="invalid-feedback">
+                Digite uma senha com no mínimo 6 caracteres.
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Confirmação de senha *</label>
+              <input class="form-control" type="password" #confirmacao="ngModel" name="confirmation" required [(ngModel)]="signupform.confirmation" minlength="6" maxlength="120">
+              <div *ngIf="f.submitted && confirmacao.invalid" class="invalid-feedback">
+                Repita a senha.
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block" >
+                Registrar
+              </button>
+            </div>
+            <small class="text-muted">Clicando em 'Registrar' você confirma que aceita nossos <br> Termos de uso e
+              Política de Privacidade.</small>
+          </form>
+        </article>
+        <div class="border-top card-body text-center">Já tem uma conta? <a routerLink="/auth/entrar">Entrar</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
+<app-initial-footer></app-initial-footer>

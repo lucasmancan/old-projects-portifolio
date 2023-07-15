@@ -1,0 +1,25 @@
+<div class="card">
+  <header class="card-header">
+    <a routerLink="/auth/registrar" class="float-right btn btn-outline-primary mt-1">Não tem uma conta?</a>
+    <h4 class="card-title mt-2">Verificar E-mail</h4>
+  </header>
+  <article class="card-body">
+    <form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate
+          class="was-validated position-relative">
+      <div class="form-group">
+        <label>Digite seu e-mail</label>
+        <input type="email" [(ngModel)]="email" required #emailInput="ngModel" name="email"
+               class="form-control" placeholder="">
+        <div *ngIf="f.submitted && emailInput.invalid" class="invalid-feedback">
+          Digite um e-mail válido.
+        </div>
+      </div> <!-- form-group end.// -->
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Solicitar código</button>
+      </div>
+      <div class="form-group text-center">
+        <a (click)="skip()" class="btn btn-link ">Já tem um código?</a>
+      </div>
+    </form>
+  </article>
+</div>

@@ -1,0 +1,121 @@
+<div class="col-md-12">
+  <div class="card card-user">
+    <div *ngIf="prescription && prescription.id" class="card-header">
+      <h5 class="card-title">Receita: #{{prescription.id}}</h5>
+    </div>
+    <div class="card-body">
+      <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate class="was-validated">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="customerSelect">Paciente</label>
+              <select class="form-control" id="customerSelect" name="customer" #customer="ngModel" required
+                [(ngModel)]="prescription.customerId">
+                <option *ngFor="let customer of customers" [value]="customer.id">{{customer.name}}</option>
+              </select>
+              <div *ngIf="f.submitted && customer.invalid" class="invalid-feedback">
+                Selecione um paciente.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="form-group">
+              <label for="expiresAt">Expiração * </label>
+               <input [(ngModel)]="prescription.expiresAt" class="form-control datepicker" data-inputmask="'alias': 'date'" required name="expiresAt" #dateExpiresAt="ngModel"
+                      id="expiresAt" placeholder="Data de expiração" type="date"  ngbDatepicker data-date-format="yyyy/mm/dd"> 
+       
+<!-- 
+              <mat-form-field >
+                <mat-label>Expiração *</mat-label>
+
+                <span >
+                  <input matInput [matDatepicker]="picker" id="expiresAt" class="form-control"
+                  [(ngModel)]="prescription.expiresAt" name="expiresAt" #dateExpiresAt="ngModel">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                </span>
+               
+              </mat-form-field> -->
+
+              <div *ngIf="f.submitted && dateExpiresAt.invalid" class="invalid-feedback">
+                Data de expiração é obrigatória.
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-8 ">
+            <div class="form-group">
+              <label for="observacoesText">Observações</label>
+              <input [(ngModel)]="prescription.details" name="observacoesText" class="form-control textarea"
+                id="observacoesText" placeholder="" type="text" />
+            </div>
+          </div>
+
+        </div>
+
+
+        <div>
+          <div class="row" *ngFor="let item of prescription?.items;let i= index">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="itemSelect-{{i}}">Medicamento</label>
+                <select class="form-control" id="itemSelect-{{i}}" name="drug-{{i}}" #drug="ngModel"
+                  [(ngModel)]="item.drugId" required>
+                  <option *ngFor="let drug of drugs" [value]="drug.id">{{drug.name}}</option>
+                </select>
+
+                <div *ngIf="f.submitted && drug.invalid" class="invalid-feedback">
+                  Medicamento é obrigatório.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="form-group">
+                    <label for="itemDetails-{{i}}">Frequencia de utilização</label>
+                    <input [(ngModel)]="item.details" name="itemDetails-{{i}}" #item="ngModel" required
+                      class="form-control textarea" id="itemDetails-{{i}}" placeholder="" type="text" />
+
+                    <div class="invalid-feedback" *ngIf="f.submitted && item.invalid">
+                      Detalhe de uso é obrigatório.
+                    </div>
+              </div>
+            </div>
+         
+            <div class="col-md-1 m-0">
+              <div class="form-group text-center p-0 m-0">
+                <label for="butto-{{i}}">Remover</label>
+                     <button class="btn btn-danger m-0 p-10 " name="butto-{{i}}" id="butto-{{i}}" type="button" (click)="removeItem(item, i)">
+                  <i class="nc-icon nc-simple-delete"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      
+        <div class="row">
+          <div class="update ml-auto mr-auto">
+
+            <button class="btn btn-primary btn-round" (click)="addItem()" type="button">Adicionar
+              Medicamento
+            </button>
+            <button class="btn btn-primary btn-round" type="submit">Salvar
+            </button>
+            <button class="btn btn-danger btn-round" (click)="download()" [disabled]="!this.prescriptionId">
+              Download
+            </button>
+            <button class="btn btn-secondary btn-round" (click)="sendToCustomer()" [disabled]="!this.prescriptionId">
+              Enviar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

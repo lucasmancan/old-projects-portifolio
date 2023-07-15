@@ -1,0 +1,63 @@
+{
+  "name": "vue-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "postinstall": "npm run build",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "connect-history-api-fallback": "^1.6.0",
+    "express": "^4.16.4",
+    "nprogress": "^0.2.0",
+    "path": "^0.12.7",
+    "serve-static": "^1.13.2",
+    "vue": "^2.5.22",
+    "vue-base64-upload": "^1.0.1",
+    "vue-element-loading": "^1.1.1",
+    "vue-fab": "^2.3.1",
+    "vue-material": "^1.0.0-beta-10.2",
+    "vue-router": "^3.0.2",
+    "vue2-form-loading": "^0.1.0",
+    "vuelidate": "^0.7.4"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

@@ -1,0 +1,31 @@
+<ion-header >
+    <ion-toolbar >
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+      <ion-title >{{artigo.title}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content >
+    <img src="../../../assets/images/blog_image_teste.jpg"> 
+    
+    <ion-card-header  class="animation-fadeIn">
+          <ion-card-title style="color: #f2f2f2;">
+              {{artigo.title}}
+          </ion-card-title>
+
+          <ion-card-subtitle style="color: #ba5536;">
+              {{artigo.subtitle}}
+          </ion-card-subtitle>             
+    </ion-card-header>
+    
+    <ion-card-content  class="animation-fadeIn">
+        <ion-text >
+            {{artigo.text}} 
+         </ion-text>
+    </ion-card-content>
+ 
+ 
+  </ion-content>
+

@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+
+        <div>
+          <table class="table">
+
+            <thead class=" text-primary">
+            <th *ngFor="let title of tableHeaders">
+              {{title}}
+            </th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let prescription of paginator?.content">
+              <!-- <td>
+
+                
+                <strong>#{{prescription?.id}}</strong>
+              </td> -->
+
+              <td>
+                {{prescription?.customerName}}
+              </td>
+              <td>
+                {{prescription.expiresAt }}
+              </td>
+              <td>
+               {{prescription.createdAt | date : 'dd/MM/yyyy HH:mm:ss'}}
+              </td>
+
+              <td>
+                <a (click)="delete(prescription)" data-toggle="tooltip" data-placement="top" title="Remover">
+                  <i class="nc-icon nc-simple-remove"></i>
+                </a>
+              </td>
+              <td>
+                <a (click)="copy(prescription)" data-toggle="tooltip" data-placement="top" title="Clonar">
+                  <i class="nc-icon nc-single-copy-04"></i>
+
+                </a>
+              </td>
+
+              
+              <td>
+                <a [routerLink]="['/receita/',prescription.id]" data-toggle="tooltip" data-placement="top" title="Detalhes">
+                  <i class="nc-icon nc-minimal-right"></i>
+                </a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<app-paginator [paginator]="paginator" (onPaginate)="this.load($event)"></app-paginator>
+<div class="col-md-12 text-right">
+  <button class="btn btn-primary btn-round" routerLink="/receita"
+          type="submit">Nova Receita
+  </button>
+</div>
+

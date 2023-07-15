@@ -1,0 +1,15 @@
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\obj\Debug\prodSystem.csprojResolveAssemblyReference.cache
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\obj\Debug\prodSystem.Properties.Resources.resources
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\obj\Debug\prodSystem.csproj.GenerateResource.Cache
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\obj\Debug\prodSystem.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\bin\Debug\prodSystem.exe.config
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\bin\Debug\prodSystem.exe
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\bin\Debug\prodSystem.pdb
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\bin\Debug\MySql.Data.dll
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\bin\Debug\MySql.Data.xml
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\obj\Debug\prodSystem.exe
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\obj\Debug\prodSystem.pdb
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\obj\Debug\prodSystem.FormVerProdutos.resources
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\obj\Debug\prodSystem.FormVerProdutos.pt-BR.resources
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\bin\Debug\pt-BR\prodSystem.resources.dll
+C:\Users\lucas\source\repos\ProjetosDeSystema\prodSystem\obj\Debug\pt-BR\prodSystem.resources.dll

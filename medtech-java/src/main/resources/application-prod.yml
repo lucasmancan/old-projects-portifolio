@@ -1,0 +1,13 @@
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  profiles: prod
+  datasource:
+    data: classpath:init.sql
+    password: ${JDBC_DATABASE_PASSWORD:12345678}
+    platform: postgres
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://database-2.c6hglwciwxaw.sa-east-1.rds.amazonaws.com:5432/backoffice}
+    username: ${JDBC_DATABASE_USERNAME:postgres}

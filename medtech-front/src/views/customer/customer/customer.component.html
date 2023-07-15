@@ -1,0 +1,64 @@
+<div class="col-md-12">
+  <div class="card card-user">
+    <div *ngIf="customer && customer.id" class="card-header">
+      <h5 class="card-title">Paciente: #{{customer.id}}</h5>
+    </div>
+    <div class="card-body">
+      <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate class="was-validated">
+
+
+        <div class="row">
+          <div class="col-md-12 ">
+            <div class="form-group">
+              <label for="nomeCliente">Nome * </label>
+              <input [(ngModel)]="customer.name" class="form-control" required #name="ngModel" name="nomeCliente" id="nomeCliente" placeholder="Nome Completo"
+                     type="text">
+              <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+                Digite o nome completo.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="form-group">
+              <label for="telefoneCliente">Telefone *</label>
+              <input [(ngModel)]="customer.phone" #phone="ngModel" mask="(00) 0 0000-0000" class="form-control" required name="telefoneCliente"  id="telefoneCliente" placeholder="(00) 0 0000-0000"
+                     type="text">
+              <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+                Digite o telefone.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 ">
+            <div class="form-group">
+              <label for="customerEmail">E-mail *</label>
+              <input [(ngModel)]="customer.email" #email="ngModel" class="form-control" required name="customerEmail" id="customerEmail" placeholder="Email"
+                     type="email">
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                Digite um e-mail válido.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 ">
+            <div class="form-group">
+              <label for="observacoesText">Observações</label>
+              <textarea [(ngModel)]="customer.details" name="observacoesText" class="form-control textarea" id="observacoesText" placeholder=""
+                        type="text"></textarea>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="update ml-auto mr-auto">
+            <button  class="btn btn-primary btn-round" type="submit">Salvar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

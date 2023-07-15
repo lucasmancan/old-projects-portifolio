@@ -1,0 +1,51 @@
+<div id="cover" class="container h-100 ">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card" *ngIf="step === 0">
+        <header class="card-header">
+          <a routerLink="/auth/registrar" class="float-right btn btn-outline-primary mt-1">Não tem uma conta?</a>
+          <h4 class="card-title mt-2">Entrar</h4>
+        </header>
+        <article class="card-body">
+          <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate
+                class="was-validated position-relative">
+
+            <div class="form-group">
+              <label>E-mail</label>
+              <input type="email" [(ngModel)]="credentials.email" required #email="ngModel" name="email" maxlength="150"
+                     class="form-control" placeholder="">
+              <small *ngIf="email.valid" class="form-text text-muted">
+                Nunca compartilharemos seu e-mail.</small>
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                Digite um e-mail válido.
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Senha</label>
+              <input class="form-control" required [(ngModel)]="credentials.password" #senha="ngModel" minlength="6" maxlength="120"
+                     name="password"
+                     type="password">
+              <div *ngIf="f.submitted && senha.invalid" class="invalid-feedback">
+                Digite uma senha com no mínimo 6 caracteres.
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block"> Acessar</button>
+            </div>
+            <div class="form-group text-center">
+              <a (click)="nextStep()" class="btn btn-link ">Esqueceu sua senha?</a>
+            </div>
+            <small class="text-muted">Clicando em 'Acessar', você confirma que aceita nossos <br> Termos de uso e
+              políticas de privacidade.
+            </small>
+          </form>
+        </article>
+      </div>
+
+      <app-verify-email *ngIf="step === 1" (onSubmit)="verifyEmail($event)" (onSkip)="nextStep()"></app-verify-email>
+      <app-change-password *ngIf="step === 2" (onSubmit)="changePassword($event)"></app-change-password>
+    </div>
+
+  </div>
+
+  <br><br>
